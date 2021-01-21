@@ -11,23 +11,26 @@
 
 */
 
+
 export function renderProduct(cbd) {
 
     const li = document.createElement('li');
-    li.classList.add('cbd-item');
+    li.classList.add('cbd-gummy');
 
     const h3 = document.createElement('h3');
     h3.classList.add('cbd-description');
     h3.textContent = cbd.description;
+    li.append(h3);
 
     const h2 = document.createElement('h2');
     h2.classList.add('cbd-brand');
     h2.textContent = cbd.brand;
+    li.append(h2);
     
     const img = document.createElement('img');
     img.classList.add('cbd-image');
+    img.src = `../assets/${cbd.image}`;
     li.append(img);
-    img.src = `../assets/`g
 
 
     const pPrice = document.createElement('p');

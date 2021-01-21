@@ -13,7 +13,7 @@ export function renderTableRow(cartItem, cbdProduct) {
     quantityTd.textContent = quantity;
 
     const priceTd = document.createElement('td');
-    priceTd.textContent = `$${calcItemTotal(cartItem, cbdProduct)}`;
+    priceTd.textContent = `$${calcItemTotal(cartItem.quantity, cbdProduct.price)}`;
 
     tr.append(nameTd, quantityTd, priceTd);
 
