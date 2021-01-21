@@ -1,4 +1,4 @@
-
+import { calcItemTotal } from './utils.js';
 
 export function renderTableRow(cartItem, cbdProduct) {
 
@@ -7,14 +7,13 @@ export function renderTableRow(cartItem, cbdProduct) {
     const tr = document.createElement('tr');
 
     const nameTd = document.createElement('td');
-    const quantityTd = document.createElement('td');
-    const priceTd = document.createElement('td');
-
-
     nameTd.textContent = cbdProduct.name;
-    quantityTd.textContent = quantity;
-    priceTd.textContent = `$${getCbdTotal(cartItem, cbdProduct)}`;
 
+    const quantityTd = document.createElement('td');
+    quantityTd.textContent = quantity;
+
+    const priceTd = document.createElement('td');
+    priceTd.textContent = `$${calcItemTotal(cartItem, cbdProduct)}`;
 
     tr.append(nameTd, quantityTd, priceTd);
 

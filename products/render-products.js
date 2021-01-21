@@ -11,7 +11,7 @@
 
 */
 
-export function renderProduct() {
+export function renderProduct(cbd) {
 
     const li = document.createElement('li');
     li.classList.add('cbd-item');
@@ -30,7 +30,7 @@ export function renderProduct() {
     img.src = `../assets/` /*stuck here*/
 
 
-    connst pPrice = document.createElement('p');
+    const pPrice = document.createElement('p');
     pPrice.classList.add('cbd-price');
     pPrice.textContent = `$${cbd.price}`;
     li.append(pPrice);

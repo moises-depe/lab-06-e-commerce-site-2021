@@ -1,3 +1,11 @@
+
+export function calcItemTotal(cartProduct, price) {
+
+    const itemTotal = cartProduct * price;
+
+    return itemTotal;
+}
+
 export function findById(id, array) {
 
     for (let item of array) {
@@ -5,11 +13,4 @@ export function findById(id, array) {
             return item;
         }
     }
-}
-
-export function calcItemTotsl(cartProduct, price) {
-
-    const itemTotal = cartProduct * price;
-
-    return itemTotal;
 }
