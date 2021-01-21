@@ -27,7 +27,7 @@ export function renderProduct(cbd) {
     const img = document.createElement('img');
     img.classList.add('cbd-image');
     li.append(img);
-    img.src = `../assets/` /*stuck here*/
+    img.src = `../assets/`g
 
 
     const pPrice = document.createElement('p');

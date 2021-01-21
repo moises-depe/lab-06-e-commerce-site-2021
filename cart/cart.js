@@ -1,7 +1,7 @@
 import { cartProduct } from './cart-data.js';
 import { cbdProduct } from '../product/data.js';
 import { renderTableRow } from './cart-render.js';
-import { calcOrderTotal, findById } from '../utils.js';
+import { calcItemTotal, findById } from '../utils.js';
 
 const tbody = document.querySelector('tbody');
 
@@ -22,5 +22,5 @@ const tdElement2 = document.createElement('td');
 tr.append(tdElement2);
 
 const tdTotal = document.createElement('td');
-tdTotal.textContent = `Cart total: $${calcOrderTotal}`;
+tdTotal.textContent = `Cart total: $${calcItemTotal}`;
 tr.append(tdTotal);
