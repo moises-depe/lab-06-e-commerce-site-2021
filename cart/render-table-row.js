@@ -1,3 +1,5 @@
+
+
 export function renderTableRow(cartItem, cbdProduct) {
 
     const quantity = cartItem.quantity;
@@ -14,4 +16,7 @@ export function renderTableRow(cartItem, cbdProduct) {
     priceTd.textContent = `$${getCbdTotal(cartItem, cbdProduct)}`;
 
 
+    tr.append(nameTd, quantityTd, priceTd);
+
+    return tr;
 }
