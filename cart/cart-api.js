@@ -1,15 +1,15 @@
-export function getCart() {
+// export function getCart() {
     
-}
+// }
 
-export function addToCart() {
+// export function addToCart() {
 
-}
-
-
-export function clearCart() {
-    const stringyDefaultCart = JSON.stringify(cart);
+// }
 
 
-    localStorage.clear();
-}
+// export function clearCart() {
+//     const stringyDefaultCart = JSON.stringify(cart);
+
+
+//     localStorage.clear();
+// }

@@ -8,7 +8,6 @@ export function findById(id, array) {
     }
 }
 
-
 export function calcItemTotal(cartProduct, price) {
 
 

@@ -1,7 +1,7 @@
-import { cartProduct } from './cart-data.js';
+import { cartProduct } from '../cart/data-cart.js';
 import { cbdProduct } from '../product/data.js';
-import { renderTableRow } from './cart-render.js';
-import { calcItemTotal, findById } from '../utils.js';
+import { renderTableRow } from './render-table-row.js';
+import { calcItemTotal, findById } from './utils.js';
 
 const tbody = document.querySelector('tbody');
 
