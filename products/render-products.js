@@ -1,16 +1,18 @@
 
    /*
    cbd products has
-
-
+   
+   
    description
    brand 
    image
    price
    thc
-
-*/
-
+   
+   */
+  
+import { addToCart } from '../cart/cart-utils.js';
+  
 
 export function renderProduct(cbd) {
 
@@ -51,9 +53,16 @@ export function renderProduct(cbd) {
         pThc.textContent = 'none';
     }
 
+
+    
     const button = document.createElement('button');
+    button.addEventListener('click', () => {
+        addToCart(cbd.id); 
+    });
+    
+    button.classList.add('add-button');    
     button.textContent = 'add to cart';
     li.append(button);
-
+    
     return li;
 }
