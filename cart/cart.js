@@ -8,9 +8,9 @@ const tbody = document.querySelector('tbody');
 for (let item of cartProduct) {
     const cbd = findById(item.id, cbdProduct);
 
-    const domElement = renderTableRow(item, cbd);
+    const tableRowElement = renderTableRow(item, cbd);
 
-    tbody.append(domElement);
+    tbody.append(tableRowElement);
 }
 
 const tr = document.createElement('tr');

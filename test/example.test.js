@@ -6,6 +6,7 @@ import { cartProduct } from '../cart/data-cart.js';
 import { renderProduct } from '../products/render-products.js';
 import { findById } from '../cart/utils.js';
 import { calcItemTotal } from '../cart/utils.js';
+import { calcOrderTotal } from '../cart/utils.js';
 import { renderTableRow } from '../cart/render-table-row.js';
 
 //Products test
@@ -228,7 +229,7 @@ test('It should return 385 for the total items that are in the cart items', (exp
 
     const expected = 385;
 
-    const actual = calcOrderTotal(cartProduct, cbdProduct);
+    const actual = calcOrderTotal(cartProduct[0], cbdProduct[0]);
 
     expect.deepEqual(actual, expected);
 });
