@@ -8,3 +8,4 @@ for (let cbd of cbdProduct) {
 
     list.append(cbdElement);
 }
+
