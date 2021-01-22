@@ -1,7 +1,7 @@
 export const cbdProduct = [
     
     {
-        id: 1,
+        id: 'gum',
         price: 55,
         image: 'cbdGummiesBears.png',
         description: 'gummies',
@@ -9,7 +9,7 @@ export const cbdProduct = [
         thc: false,
     },
     {
-        id: 2,
+        id: 'tincture',
         price: 40,
         image: 'tincture.jpg',
         description: 'tincture.jpg',
@@ -17,7 +17,7 @@ export const cbdProduct = [
         thc: false,
     },
     {
-        id: 3,
+        id: 'vape',
         price: 50,
         image: 'vapecart.jpg',
         description: 'vape cartridge',
@@ -25,7 +25,7 @@ export const cbdProduct = [
         thc: false,
     },
     {
-        id: 4,
+        id: 'lotion',
         price: 20,
         image: 'lotion.jpg',
         description: 'lotion',
@@ -33,7 +33,7 @@ export const cbdProduct = [
         thc: false,
     },
     {
-        id: 5,
+        id: 'bathBomb',
         price: 10,
         image: 'bathbomb.jpg',
         description: 'bath bomb',

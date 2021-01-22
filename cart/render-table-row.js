@@ -7,7 +7,7 @@ export function renderTableRow(cartItem, cbdProduct) {
     const tr = document.createElement('tr');
 
     const nameTd = document.createElement('td');
-    nameTd.textContent = cbdProduct.name;
+    nameTd.textContent = cbdProduct.id;
 
     const quantityTd = document.createElement('td');
     quantityTd.textContent = quantity;

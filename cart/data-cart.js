@@ -1,24 +1,24 @@
 export const cartProduct = [
 
     {
-        id: 1,
+        id: 'gum',
         quantity: 3
     },
     {
-        id: 2,
+        id: 'tincture',
         quantity: 1
 
     },
     {
-        id: 3,
+        id: 'vape',
         quantity:2
     },
     {
-        id: 4,
+        id: 'lotion',
         quantity:2
     },
     {
-        id: 5,
+        id: 'bathBomb',
         quantity:4
     },
 

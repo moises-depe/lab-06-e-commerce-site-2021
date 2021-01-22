@@ -1,9 +1,12 @@
 // IMPORT MODULES under test here:
 // import { example } from '../example.js';
+
 import { cbdProduct } from '../products/data.js';
+import { cartProduct } from '../cart/data-cart.js';
 import { renderProduct } from '../products/render-products.js';
 import { findById } from '../cart/utils.js';
 import { calcItemTotal } from '../cart/utils.js';
+import { renderTableRow } from '../cart/render-table-row.js';
 
 //Products test
 
@@ -111,6 +114,7 @@ test('calcItemTotal should take in a quantity of 3 from id 3 and should return a
         }];
 
     const cbdProduct = [{
+
         id: 3,
         price: 50,
         image: 'vapecart.jpg',
@@ -121,9 +125,110 @@ test('calcItemTotal should take in a quantity of 3 from id 3 and should return a
 
     const expected = 150;
 
-    const actual = calcItemTotal(item[0], cbdProduct[0]);
+    const actual = calcItemTotal(item[0].quantity, cbdProduct[0].price);
 
     expect.equal(actual, expected);
 
 });
 
+test('It should take in cart items and return the table rows', (expect) => {
+
+    const cartItem1 = {
+        id: 'gum',
+        quantity: 1
+    };
+
+    const cbdItem1 = {
+        id: 'gum',
+        price: 55,
+        image: 'cbdGummiesBears.png',
+        description: 'gummies',
+        brand: 'justcbd',
+        thc: false,
+    };
+
+    const expected = '<tr><td>gum</td><td>1</td><td>$55</td></tr>';
+
+    const actual = renderTableRow(cartItem1, cbdItem1);
+
+    expect.equal(actual.outerHTML, expected);
+});
+
+test('It should return 385 for the total items that are in the cart items', (expect) => {
+
+    const cartProduct = [
+
+        {
+            id: 'gum',
+            quantity: 3
+        },
+        {
+            id: 'tincture',
+            quantity: 1
+    
+        },
+        {
+            id: 'vape',
+            quantity:2
+        },
+        {
+            id: 'lotion',
+            quantity:2
+        },
+        {
+            id: 'bathBomb',
+            quantity:4
+        },
+    
+    ];
+
+    const cbdProduct = [
+    
+        {
+            id: 'gum',
+            price: 55,
+            image: 'cbdGummiesBears.png',
+            description: 'gummies',
+            brand: 'justcbd',
+            thc: false,
+        },
+        {
+            id: 'tincture',
+            price: 40,
+            image: 'tincture.jpg',
+            description: 'tincture.jpg',
+            brand: 'full specturm',
+            thc: false,
+        },
+        {
+            id: 'vape',
+            price: 50,
+            image: 'vapecart.jpg',
+            description: 'vape cartridge',
+            brand: 'justcbd',
+            thc: false,
+        },
+        {
+            id: 'lotion',
+            price: 20,
+            image: 'lotion.jpg',
+            description: 'lotion',
+            brand: 'justcbd',
+            thc: false,
+        },
+        {
+            id: 'bathBomb',
+            price: 10,
+            image: 'bathbomb.jpg',
+            description: 'bath bomb',
+            brand: 'justcbd',
+            thc: false,
+        },
+    ];
+
+    const expected = 385;
+
+    const actual = calcOrderTotal(cartProduct, cbdProduct);
+
+    expect.deepEqual(actual, expected);
+});
