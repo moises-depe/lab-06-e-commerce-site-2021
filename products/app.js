@@ -4,8 +4,8 @@ import { renderProduct } from './render-products.js';
 
 const list = document.getElementById('list');
 
-for (let cbdProducts of cbdProducts) {
-    const cbdElementElement = renderProduct(cbdProduct);
+for (let item of cbdProduct) {
+    const cbdElementElement = renderProduct(item);
 
     list.prepend(cbdElementElement);
 }
