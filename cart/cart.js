@@ -1,5 +1,5 @@
 import { cartProduct } from '../cart/data-cart.js';
-import { cbdProduct } from '../product/data.js';
+import { cbdProduct } from '../products/data.js';
 import { renderTableRow } from './render-table-row.js';
 import { calcItemTotal, findById } from './utils.js';
 
