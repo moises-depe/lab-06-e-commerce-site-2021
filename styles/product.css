@@ -1,7 +1,13 @@
+body {
+  background-color: white;
+}
+
+
 img {
 
     width: 18%;
     height: 29%;
+    float: left;
 
   }
 

@@ -1,5 +1,5 @@
 import { cbdProduct } from './data.js';
-import { renderProduct } from './render-cbd';
+import { renderProduct } from './render-products.js';
 
 
 const list = document.getElementById('list');
