@@ -8,20 +8,23 @@ export function findById(id, array) {
     }
 }
 
-let total = 0;
 
 export function calcItemTotal(cartProduct, price) {
+
+
 
     const itemTotal = cartProduct * price;
 
     return itemTotal;
 }
 
-export function calcOrderTotal(cartItem, cbd) {
+export function calcOrderTotal(cartItem, cbdArray) {
+
+    let total = 0;
 
     for (let item of cartItem) {
-        const shoe = findById(item.id, cbd);
-        const totalByItem = calcItemTotal(item, shoe);
+        const cbd = findById(item.id, cbdArray);
+        const totalByItem = calcItemTotal(item.quantity, cbd.price);
 
         total = total + totalByItem;
 

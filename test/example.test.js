@@ -37,8 +37,58 @@ test('time to test a function', (expect) => {
     expect.equal(actual.outerHTML, expected);
 });
 
+//calculate total test
+test('calcItemTotal should take in a quantity of 3 from id 3 and should return a total of $150', (expect) => {
 
-//cart test
+    const item = [
+
+        { 
+            id: 3,
+            quantity: 3
+
+        }];
+
+    const cbdProduct = [{
+
+        id: 3,
+        price: 50,
+        image: 'vapecart.jpg',
+        description: 'vape cartridge',
+        brand: 'justcbd',
+        thc: false,
+    }];
+
+    const expected = 150;
+
+    const actual = calcItemTotal(item[0].quantity, cbdProduct[0].price);
+
+    expect.equal(actual, expected);
+
+});
+
+test('It should take in a cart items and return the table row', (expect) => {
+
+    const cartItem1 = {
+        id: 'gum',
+        quantity: 1
+    };
+
+    const cbdItem1 = {
+        id: 'gum',
+        price: 55,
+        image: 'cbdGummiesBears.png',
+        description: 'gummies',
+        brand: 'justcbd',
+        thc: false,
+    };
+
+    const expected = '<tr><td>gum</td><td>1</td><td>$55</td></tr>';
+
+    const actual = renderTableRow(cartItem1, cbdItem1);
+
+    expect.equal(actual.outerHTML, expected);
+});
+
 
 test('findById should take in a 4 and return a lotion', (expect) => {
     //Arrange
@@ -103,57 +153,6 @@ test('findById should take in a 4 and return a lotion', (expect) => {
     expect.deepEqual(actual, expected);
 });
 
-//calculate total test
-test('calcItemTotal should take in a quantity of 3 from id 3 and should return a total of $150', (expect) => {
-
-    const item = [
-
-        { 
-            id: 3,
-            quantity: 3
-
-        }];
-
-    const cbdProduct = [{
-
-        id: 3,
-        price: 50,
-        image: 'vapecart.jpg',
-        description: 'vape cartridge',
-        brand: 'justcbd',
-        thc: false,
-    }];
-
-    const expected = 150;
-
-    const actual = calcItemTotal(item[0].quantity, cbdProduct[0].price);
-
-    expect.equal(actual, expected);
-
-});
-
-test('It should take in cart items and return the table rows', (expect) => {
-
-    const cartItem1 = {
-        id: 'gum',
-        quantity: 1
-    };
-
-    const cbdItem1 = {
-        id: 'gum',
-        price: 55,
-        image: 'cbdGummiesBears.png',
-        description: 'gummies',
-        brand: 'justcbd',
-        thc: false,
-    };
-
-    const expected = '<tr><td>gum</td><td>1</td><td>$55</td></tr>';
-
-    const actual = renderTableRow(cartItem1, cbdItem1);
-
-    expect.equal(actual.outerHTML, expected);
-});
 
 test('It should return 385 for the total items that are in the cart items', (expect) => {
 
@@ -229,7 +228,7 @@ test('It should return 385 for the total items that are in the cart items', (exp
 
     const expected = 385;
 
-    const actual = calcOrderTotal(cartProduct[0], cbdProduct[0]);
+    const actual = calcOrderTotal(cartProduct, cbdProduct);
 
     expect.deepEqual(actual, expected);
 });
