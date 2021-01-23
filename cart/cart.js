@@ -1,6 +1,6 @@
 import { cartProduct } from '../cart/data-cart.js';
 import { cbdProduct } from '../products/data.js';
-import { getCart } from './cart-utils.js';
+import { clearCart, getCart } from './cart-utils.js';
 import { renderTableRow } from './render-table-row.js';
 import { calcItemTotal, findById } from './utils.js';
 
@@ -28,22 +28,11 @@ const tdTotal = document.createElement('td');
 tdTotal.textContent = `Cart total: $${calcItemTotal}`;
 tr.append(tdTotal);
 
-const button = document.querySelector('place-button');
-button.textContent = 'place-order';
+const button = document.querySelector('button');
+if (cart.length === 0) button.disabled = 'true';
 
 button.addEventListener('click', () => {
-    const cart = getCart();
 
-
-
-}
-
-// /
-// const button = document.createElement('button');
-// button.addEventListener('click', () => {
-//     addToCart(cbd.id); 
-// });
-
-// button.classList.add('add-button');    
-// button.textContent = 'add to cart';
-// li.append(button);//
+    alert(JSON.stringify(cart, true, 2));
+    clearCart();
+});

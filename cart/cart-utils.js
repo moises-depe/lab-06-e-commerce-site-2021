@@ -24,11 +24,13 @@ export function getCart() {
 export function addToCart(id) {  
 
     const cart = getCart();
-
     const cartItem = findById(id, cart);
 
     if (cartItem) {
         cartItem.quantity++;
+        const stringyCart = JSON.stringify(cart);
+        localStorage.setItem(CART, stringyCart);
+
     } else {
     
         const newItem = {
@@ -37,6 +39,9 @@ export function addToCart(id) {
         
         };
         cart.push(newItem);
+        const stringyCart = JSON.stringify(cart);
+        localStorage.setItem(CART, stringyCart);
+
     }
 }
 
@@ -44,5 +49,5 @@ export function clearCart() {
     const stringifyEmptyCart = JSON.stringify(emptyCartArray);
 
 
-    localStorage.clear(CART, stringifyEmptyCart);
+    localStorage.setItem(CART, stringifyEmptyCart);
 }

@@ -15,7 +15,6 @@ import { addToCart } from '../cart/cart-utils.js';
   
 
 export function renderProduct(cbd) {
-
     const li = document.createElement('li');
     li.classList.add('cbd-gummy');
 
@@ -52,12 +51,11 @@ export function renderProduct(cbd) {
 
         pThc.textContent = 'none';
     }
-
-
     
     const button = document.createElement('button');
     button.addEventListener('click', () => {
         addToCart(cbd.id); 
+
     });
     
     button.classList.add('add-button');    
