@@ -25,7 +25,7 @@ test('time to test a function', (expect) => {
     };
 
     // Set up your arguments and expectations
-    const expected = `<li class="cbd-gummy"><h3 class="cbd-description">gummies</h3><h2 class="cbd-brand">justcbd</h2><img class="cbd-image" src="../assets/cbdGummiesBears.png"><p class="cbd-price">$55</p><button>add to cart</button></li>`;
+    const expected = `<li class="cbd-gummy"><h3 class="cbd-description">gummies</h3><h2 class="cbd-brand">justcbd</h2><img class="cbd-image" src="../assets/cbdGummiesBears.png"><p class="cbd-price">$55</p><button class="add-button">add to cart</button></li>`;
 
     
     //Act 
