@@ -1,11 +1,11 @@
-// import { cbdProduct } from './data.js';
-// import { renderProduct } from './render-products.js';
+import { cbdProduct } from './data.js';
+import { renderProduct } from './render-products.js';
 
-// const list = document.getElementById('list');
+const list = document.getElementById('list');
 
-// for (let cbd of cbdProduct) {
-//     const cbdElement = renderProduct(cbd);
+for (let cbd of cbdProduct) {
+    const cbdElement = renderProduct(cbd);
 
-//     list.append(cbdElement);
-// }
+    list.append(cbdElement);
+}
 

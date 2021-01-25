@@ -20,7 +20,7 @@ export const cbdProduct = [
         id: 'vape',
         price: 50,
         image: 'vapecart.jpg',
-        description: 'vape cartridge',
+        description: 'vapecartridge',
         brand: 'justcbd',
         thc: false,
     },
